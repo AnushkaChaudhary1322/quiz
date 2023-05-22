@@ -1,4 +1,6 @@
-
+const questions = [
+    
+    },
     {
  
         question: "Who plays God in 'God Tussi Great Ho'?",

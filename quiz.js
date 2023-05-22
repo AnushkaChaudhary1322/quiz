@@ -177,10 +177,13 @@ const questions = [
      function changeText() {
        const textElement = document.getElementById("text");
        textElement.classList.remove("fade-in");
-       
-       
-     
-     }
+         
+       setTimeout(function() {
+         textElement.textContent = texts[currentIndex];
+         textElement.classList.add("fade-in");
+         currentIndex = (currentIndex + 1) % texts.length;
+       }, 3000);
+       }
      
      setInterval(changeText, 6000);
 

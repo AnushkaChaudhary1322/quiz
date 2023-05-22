@@ -1,5 +1,16 @@
 const questions = [
-    
+    {
+       
+        ]
+    },
+    {
+        question: "Who plays the female lead in the movie 'Chandni Chowk to China'?",
+        answers: [
+            {text: "Priyanka Chopra", correct: false},
+            {text: "Deepika Padukones", correct: true},
+            {text: "Aishwarya Rai Bachchan", correct: false},
+            {text: "Preity Zinta", correct: false},
+        ]
     },
     {
  

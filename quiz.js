@@ -156,7 +156,14 @@ const questions = [
      nextButton.innerHTML = "Play Again"; 
      nextButton.style.display="block";
  }
- 
+ function handleNextButton(){
+     currentQuestionIndex++;
+     if(currentQuestionIndex < questions.length) {
+         showQuestion();
+     }
+     else{
+         showScore();
+     }
  }
      nextButton.addEventListener("click", ()=>{
      if (currentQuestionIndex < questions.length) { 

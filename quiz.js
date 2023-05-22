@@ -1,6 +1,8 @@
 const questions = [
     {
-       
+        question: "What is the highest grossing Bollywood studio of all time?",
+        answers: [
+            
         ]
     },
     {

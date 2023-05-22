@@ -83,7 +83,9 @@ body
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
 }
-
+.fade-in {
+opacity: 0;
+animation: fadeIn 3s forwards;
 }
 
 @keyframes fadeIn {

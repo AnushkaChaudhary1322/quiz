@@ -6,20 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAVASCRIPT QUIZ GAME</title>
     <link href="quiz.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        </b><h1 class="head"><b>Bollywood Quiz</b></h1>
-    <div>
-        <div class="ff">
-            <pre><h2>    #Fun Facts</h2>
-            <p id="text" class="fade-in">Sholay won only one award 
-but still most successful 
-movie in Bollywood</p></pre>
-     </div>
-         <div class="con1">
-            <div class= "quiz">
+</head>
+<body>
+    <div id="cc">
+        <div class="con1">
+    <h1>Bollywood Quiz Mania</h1>
+        <div class= "quiz">
           <h2 id="question" >Question goes here</h2>
-            <div id= "answer-buttons">
+          <div id= "answer-buttons">
             <button class= "btn" >Answer 1</button>
             <button class= "btn" >Answer 2</button>
             <button class= "btn" >Answer 3</button>
@@ -27,11 +21,61 @@ movie in Bollywood</p></pre>
            </div>
                 <button id="next-btn">Next</button>
             </div>
+            
     </div>
-    </div>   
+    <img id="img" src="filmstrip.PNG" />
+    </div>
+</div>
+        <div class="ff">
+            <pre><div id="slideshow">
+                    <img src="https://www.bollywoodshaadis.com/img/article-20211130513333548815000.jpg" 
+alt="SRK has phobia of horses" class="active">
+                    <img src="https://pbs.twimg.com/media/Fafi28iWIAE3gqO.jpg:large" 
+alt="Kareena wore 130
+different outfits for the
+movie Heroine">
+                    <img src="https://images.static-bluray.com/products/20/52589_1_large.jpg" 
+alt="'LOC: Kargil' is 4 hours and
+25 minutes Longest film in
+the world">
+                    <img src="https://e0.pxfuel.com/wallpapers/572/32/desktop-wallpaper-rajnikant-south-actor-thumbnail.jpg" 
+alt="Rajnikanth never said Enna
+Rascala ">
+                    <img src="https://media1.popsugar-assets.com/files/thumbor/eErM4r_YkKLpGhX_jdIkFX7O2UY/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2018/12/13/727/n/1922564/0b4f5f1edf6103f3_GettyImages-1072341474/i/Kareena-Kapoor-Also-Matched-Husband-Saif-Ali-Khan.jpg" 
+alt="Kareena Kapoor attended her
+husbandSaif Ali Khan First
+wedding when she was just
+at age 10">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREGaYqcClb5bHREfjgtg2PlyQDsK9Vth1dTH09CxMOyyFnLTCfwLLZ6KuhpHEM-y_6uQAee215uwo&usqp=CAU&ec=48665701" 
+alt="The pregnancy scene from 3 
+Idiotswas initially planned for
+Munna Bhai M.B.B.S.">
+                    <img src="https://images.mubicdn.net/images/cast_member/2184/cache-2992-1547409411/image-w856.jpg" 
+alt="Once Tom Cruice was
+consider for the role of Raj
+Malhotra in Dilwale Dhulania
+Le Jayenge">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTViZjk0OGMtMTllMi00YjcyLTg4ZTMtNmEzZjlmZWIwNDJjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg" 
+alt="'Kaho Naa Pyar Hai' was added 
+to the Guinness Book of 
+World Records for winning
+the most number of awards">
+                </div><div id="caption"><h3>#Fun Facts</h3>
+                    <p>SRK has a phobia of riding horses</p>
+                  </div></pre></div>
+                  <audio id="background-music" loop>
+                    <source src="background3.mp3" type="audio/mpeg">
+                </audio> 
+                  <audio id="sound-effect">
+                    <source src="wrong.wav" type="audio/mpeg">
+                </audio>
+                <audio id="applause-sound">
+                    <source src="right2.wav" type="audio/mpeg">
+                </audio>
+                <audio id="end-game-sound">
+                    <source src="buttonClick.wav" type="audio/mpeg">
+                </audio>
+                
     <script src="quiz.js"></script>
 </body>
 </html>
-
-
-   

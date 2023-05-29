@@ -98,13 +98,39 @@ const questions = [
      
      let currentQuestionIndex=0;
      let score = 0;
-     
+
+const soundEffect = document.getElementById("sound-effect");
+const applauseSound = document.getElementById("applause-sound");
+const endGameSound = document.getElementById("end-game-sound");
+const backgroundMusic = document.getElementById("background-music");
+
+// Play sound effect for wrong
+function playSoundEffect() {
+    soundEffect.play();
+}
+
+// Play applause sound for correct
+function playApplauseSound() {
+    applauseSound.play();
+}
+
+// Play end game sound for onclick
+function playEndGameSound() {
+    endGameSound.play();
+}
+
+// Play background music
+function playBackgroundMusic() {
+    backgroundMusic.play();
+}
+
      function startQuiz()
      {
          currentQuestionIndex=0;
          score = 0;
          nextButton.innerHTML = "Next";
          showQuestion();
+         playBackgroundMusic();
      }
  
      function showQuestion()
@@ -133,14 +159,17 @@ const questions = [
          answerButtons.removeChild (answerButtons.firstChild);
      }
  }
+ 
  function selectAnswer(e){
      const selectedBtn = e.target;
      const isCorrect = selectedBtn.dataset.correct === "true";
      if (isCorrect){ 
          selectedBtn.classList.add("correct");
          score++;
+         playApplauseSound();
      }else{
      selectedBtn.classList.add("incorrect");
+     playSoundEffect();
      }
      Array.from(answerButtons.children).forEach(button => {
           if(button.dataset.correct === "true"){ 
@@ -160,6 +189,7 @@ const questions = [
      currentQuestionIndex++;
      if(currentQuestionIndex < questions.length) {
          showQuestion();
+         playEndGameSound();
      }else{
      showScore();
      }
@@ -172,22 +202,32 @@ const questions = [
      }
  })
      startQuiz();
-     const texts = ["Kareena wore 130 different outfits for\n the movie Heroine", "'LOC: Kargil' is 4 hours and 25\n minutes Longest film in the world", "First bollywood movie was released in\n 1899 where first hollywood movie\n in 1907, Bollywood is older than\n hollywood.", "Mughal-e-Azam is the most\n expensive Bollywood film", "The pregnancy scene from 3 Idiots\n was initially planned for Munna\n Bhai M.B.B.S.","Once Tom Cruice was consider\n for the role of Raj Malhotra\n in Dilwale Dhulania Le Jayenge"," Kaho Naa.. Pyar Hai’ was \nadded to the Guinness Book of World\n Records 2002 edition for winning the\n most number of awards for a movie.\nThe movie won a total of 92 awards!"];
-     let currentIndex = 0;
-     function changeText() {
-       const textElement = document.getElementById("text");
-       textElement.classList.remove("fade-in");
-         
-       setTimeout(function() {
-         textElement.textContent = texts[currentIndex];
-         textElement.classList.add("fade-in");
-         currentIndex = (currentIndex + 1) % texts.length;
-       }, 3000);
-       }
      
-     setInterval(changeText, 6000);
-
- 
-
- 
-     
+    window.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll("#slideshow img");
+        const caption = document.querySelector("#caption p");
+        let currentImage = 0;
+        
+        // Set the first image as active
+        images[currentImage].classList.add("active");
+        
+        // Function to change the slide
+        function changeSlide() {
+          images[currentImage].classList.remove("active");
+          currentImage = (currentImage + 1) % images.length;
+          images[currentImage].classList.add("active");
+        }
+        
+        // Function to update the caption
+        function updateCaption() {
+          const altText = images[currentImage].getAttribute("alt");
+          caption.textContent = altText;
+        }
+        
+        // Call the functions every 6 seconds
+        setInterval(function() {
+          changeSlide();
+          updateCaption();
+        }, 6000);
+      });
+      
